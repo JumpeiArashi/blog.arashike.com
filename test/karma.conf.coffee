@@ -11,7 +11,8 @@ module.exports = (config) ->
     # testing framework to use (jasmine/mocha/qunit/...)
     # as well as any additional frameworks (requirejs/chai/sinon/...)
     frameworks: [
-      "jasmine"
+      "mocha"
+      "chai"
     ]
 
     # list of files / patterns to load in the browser
@@ -61,7 +62,8 @@ module.exports = (config) ->
     # Which plugins to enable
     plugins: [
       "karma-phantomjs-launcher",
-      "karma-jasmine",
+      "karma-mocha",
+      "karma-chai",
       "karma-coffee-preprocessor"
     ]
 
