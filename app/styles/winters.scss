@@ -1,0 +1,16 @@
+$winters_color: #D8F8F0;
+
+body {
+  background-color: $winters_color;
+}
+
+.winters  {
+  header {
+    min-height: 182px;
+    background: url("../images/winters/header.png") repeat-x;
+    background-size: 208px;
+  }
+  .contents {
+    background-color: $winters_color;
+  }
+}
