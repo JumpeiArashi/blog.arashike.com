@@ -9,15 +9,16 @@
  # Main module of the application.
 ###
 angular
-  .module 'blogarashikecomApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
+  .module 'blog', [
+    'ngAnimate'
+    'ngAria'
+    'ngCookies'
+    'ngMessages'
+    'ngResource'
+    'ngRoute'
+    'ngSanitize'
     'ngTouch'
+    'ngMaterial'
   ]
   .config ($routeProvider) ->
     $routeProvider
