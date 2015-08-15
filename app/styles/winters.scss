@@ -13,4 +13,9 @@ body {
   .contents {
     background-color: $winters_color;
   }
+  footer {
+    min-height: 300px;
+    background: url("../images/winters/footer.png") repeat-x;
+    background-size: 380px;
+  }
 }
