@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'fourside';
+  src: url('fonts/fourside.woff');
+}
+
+.title-wrapper {
+  padding: 20px;
+}
+
+.title {
+  color: chocolate;
+  font-family: 'fourside';
+  font-size: 17px;
+  padding: 6px 0 0 7px;
+  min-height: 32px;
+  background-image:
+    url('../images/header/balloon-left.png'),
+    url('../images/header/balloon-middle.png'),
+    url('../images/header/balloon-right.png');
+  background-position:
+    0 0,
+    24px 0,
+    247px 0;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat;
+}
