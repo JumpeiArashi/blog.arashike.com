@@ -10,6 +10,7 @@ Requirements
 * nodejs v0.12.7 or later
 * compass
 * npm component at global
+    + yo
     + grunt-cli
     + bower
     + angular-generator
