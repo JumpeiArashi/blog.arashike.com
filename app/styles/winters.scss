@@ -14,8 +14,21 @@ body {
     background-color: $winters_color;
   }
   footer {
-    min-height: 300px;
+    min-height: 351px;
     background: url("../images/winters/footer.png") repeat-x;
     background-size: 380px;
   }
+    .credit {
+      min-height: 340px;
+    }
+    .credit-text {
+      margin-right: -10px;
+      font-family: 'status';
+      font-size: 14px;
+      color: $winters_color;
+    }
+    .credit-image {
+      margin-right: -7.5px;
+      margin-bottom: -9px;
+    }
 }
