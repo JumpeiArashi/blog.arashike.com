@@ -2,3 +2,34 @@
   font-family: 'status';
   src: url('fonts/status.woff');
 }
+
+.frame {
+  border-width: 13px;
+  border-image: url('../images/frame-plane.png');
+  border-image-slice: 32;
+  border-image-repeat: repeat;
+}
+
+.frame-mint {
+  @extend .frame;
+  border-image: url('../images/frame-mint.png') 32 repeat;
+}
+
+.frame-inner {
+  padding: 8px;
+  background-color: black;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.author {
+  .author-image {
+    height: 40px;
+  }
+  .author-name {
+    color: white;
+    font-size: 12px;
+  }
+}

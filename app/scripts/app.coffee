@@ -20,6 +20,8 @@ angular
     'ngTouch'
     'ngMaterial'
   ]
+  .value 'apiEndpoint', 'https://api.github.com'
+  .value 'authorName', 'JumpeiArashi'
   .config ($routeProvider) ->
     $routeProvider
       .when '/',

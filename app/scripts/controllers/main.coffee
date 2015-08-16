@@ -7,11 +7,15 @@
  # # MainCtrl
  # Controller of the blogarashikecomApp
 ###
-angular.module 'blogarashikecomApp'
-  .controller 'MainCtrl', ->
-    @awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
-    return
+angular.module 'arashike-blog'
+  .controller 'MainCtrl', [
+    '$scope'
+    'GithubUserApiService'
+    'authorName'
+    ($scope, GithubUserApiService, authorName) ->
+      githubUserApiParams =
+        username: authorName
+      GithubUserApiService(githubUserApiParams)
+        .then (res) ->
+          $scope.author = res
+  ]
