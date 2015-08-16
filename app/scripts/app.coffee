@@ -9,7 +9,7 @@
  # Main module of the application.
 ###
 angular
-  .module 'blog', [
+  .module 'arashike-blog', [
     'ngAnimate'
     'ngAria'
     'ngCookies'
