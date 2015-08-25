@@ -1,12 +1,22 @@
 <div class="winters">
   <div layout-padding>
-    <div class="frame-mint inline-block">
-      <div class="frame-inner">
-        <div class="author" layout="column" layout-align="center center">
-          <img class="author-image" ng-src="{{author.data.avatar_url}}}">
-          <div class="author-name">{{author.data.login}}</div>
+    <md-grid-list md-cols="8" md-row-height="1:1" role="list">
+      <md-grid-tile ng-repeat="content in data">
+        <div ng-show="$first" class="frame-mint">
+          <div class="frame-inner">
+            <div class="author" layout="column" layout-align="center center">
+              <img class="author-image" ng-src="{{content.avatar_url}}}">
+              <div class="author-name">{{content.login}}</div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+        <div ng-show="!$first">
+          <!--<div class="frame-inner">
+            <p data-ng-bind="content.description" data-ellipsis></p>
+          </div>-->
+          <winters-article description="{{content.description}}"></winters-article>
+        </div>
+      </md-grid-tile>
+    </md-grid-list>
   </div>
 </div>

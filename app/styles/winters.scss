@@ -13,6 +13,14 @@ body {
   .contents {
     background-color: $winters_color;
   }
+  article {
+    .article-icon {
+      margin-top: 16px;
+    }
+    .frame-inner {
+      font-size: 12px;
+    }
+  }
   footer {
     min-height: 351px;
     background: url("../images/winters/footer.png") repeat-x;
