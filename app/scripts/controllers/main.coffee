@@ -21,15 +21,13 @@ angular.module 'arashike-blog'
       authorName
       gistUsername
     ) ->
-      githubUserApiParams =
-        username: authorName
-      GithubUserApiService(githubUserApiParams)
-        .then (res) ->
-          $scope.author = res
+      $scope.data = []
 
-      githubGistsApiParams =
-        username: gistUsername
-      GithubGistsApiService(githubGistsApiParams)
+      GithubUserApiService(authorName)
         .then (res) ->
-          $scope.gists = res
+          $scope.data.push res.data
+
+      GithubGistsApiService(gistUsername)
+        .then (res) ->
+          $scope.data = $scope.data.concat res.data
   ]

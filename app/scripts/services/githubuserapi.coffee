@@ -9,9 +9,7 @@
 ###
 angular.module 'arashike-blog'
   .service 'GithubUserApiService', ($http, apiEndpoint) ->
-    return ({
-      username
-    }) ->
+    return (username) ->
       return $http.get("#{apiEndpoint}/users/#{username}")
         .then (res) ->
           return res
