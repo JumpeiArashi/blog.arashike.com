@@ -39,6 +39,9 @@ angular.module 'arashike-blog'
         if description.length > 30
           description = "#{description[0..24]}..."
 
+        else if !description.length
+          description = "No title..."
+
         scope.wintersArticleElement =
           image: image
           description: description
