@@ -16,13 +16,11 @@
 }
 
 .frame-inner {
+  height: 100%;
+  width: 100%;;
   padding: 8px;
   background-color: black;
   color: white;
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 .author {
