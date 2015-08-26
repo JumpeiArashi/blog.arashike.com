@@ -8,10 +8,17 @@
  # Service in the arashike-blog.
 ###
 angular.module 'arashike-blog'
-  .service 'GithubUserApiService', ($http, apiEndpoint) ->
-    return (username) ->
-      return $http.get("#{apiEndpoint}/users/#{username}")
-        .then (res) ->
-          return res
-        .then (res) ->
-          return res
+  .service 'GithubUserApiService', [
+    '$http'
+    'apiEndpoint'
+    (
+      $http
+      apiEndpoint
+    ) ->
+      return (username) ->
+        return $http.get("#{apiEndpoint}/users/#{username}")
+          .then (res) ->
+            return res
+          .then (res) ->
+            return res
+  ]
