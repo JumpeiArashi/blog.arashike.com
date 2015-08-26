@@ -1,17 +1,15 @@
-$winters_color: #D8F8F0;
+$winters_color: #D3FAF1;
 
 body {
-  background-color: $winters_color;
+  background-color: #00ABBA;
 }
 
 .winters  {
+  background-color: $winters_color;
   header {
     min-height: 182px;
     background: url("../images/winters/header.png") repeat-x;
     background-size: 208px;
-  }
-  .contents {
-    background-color: $winters_color;
   }
   article {
     .article-icon {
