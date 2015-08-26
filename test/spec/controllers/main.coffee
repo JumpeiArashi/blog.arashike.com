@@ -3,7 +3,7 @@
 describe 'Controller: MainCtrl', ->
 
   # load the controller's module
-  beforeEach module 'blogarashikecomApp'
+  beforeEach module 'arashike-blog'
 
   MainCtrl = {}
 
@@ -13,8 +13,10 @@ describe 'Controller: MainCtrl', ->
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
     MainCtrl = $controller 'MainCtrl', {
-      # place here mocked dependencies
+      $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', ->
-    expect(MainCtrl.awesomeThings.length).toBe 3
+  it 'should not be undefined', ->
+    expect !!MainCtrl
+      .to
+      .equal true

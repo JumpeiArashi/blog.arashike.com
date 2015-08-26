@@ -6,9 +6,11 @@ describe 'Service: GithubGistsApi', ->
   beforeEach module 'arashike-blog'
 
   # instantiate service
-  GithubGistsApi = {}
-  beforeEach inject (_GithubGistsApi_) ->
-    GithubGistsApi = _GithubGistsApi_
+  GithubGistsApiService = {}
+  beforeEach inject (_GithubGistsApiService_) ->
+    GithubGistsApiService = _GithubGistsApiService_
 
   it 'should do something', ->
-    expect(!!GithubGistsApi).toBe true
+    expect !!GithubGistsApiService
+      .to
+      .equal true
