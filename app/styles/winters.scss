@@ -17,6 +17,11 @@ body {
     }
     .frame-inner {
       font-size: 12px;
+      .created-at {
+        margin-top: 7px;
+        font-size: 90%;
+        font-family: status;
+      }
     }
   }
   footer {
@@ -30,7 +35,7 @@ body {
     .credit-text {
       margin-right: -10px;
       font-family: 'status';
-      font-size: 14px;
+      font-size: 85%;
       color: $winters_color;
     }
     .credit-image {

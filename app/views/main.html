@@ -1,6 +1,6 @@
 <div class="winters">
   <div layout-padding>
-    <md-grid-list md-cols-sm="2" md-cols-gt-sm="4" md-cols-gt-md="8" md-cols-gt-lg="12" md-row-height-sm="5:4" md-row-height-gt-sm="7:5" md-row-height-gt-md="2:3" md-row-height-gt-lg="3:4">
+    <md-grid-list md-cols-sm="2" md-cols-gt-sm="4" md-cols-gt-md="8" md-cols-gt-lg="12" md-row-height-sm="13:12" md-row-height-gt-sm="7:8" md-row-height-gt-md="7:11" md-row-height-gt-lg="7:10">
       <md-grid-tile ng-repeat="content in data">
         <div ng-show="$first" class="frame-mint">
           <div class="frame-inner">
@@ -11,7 +11,7 @@
           </div>
         </div>
         <div ng-show="!$first">
-          <winters-article description="{{content.description}}"></winters-article>
+          <winters-article gist="{{content}}"></winters-article>
         </div>
       </md-grid-tile>
     </md-grid-list>

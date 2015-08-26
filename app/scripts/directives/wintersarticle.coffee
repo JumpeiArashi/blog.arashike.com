@@ -15,6 +15,9 @@ angular.module 'arashike-blog'
           <div class="frame-mint">
             <div class="frame-inner">
             {{wintersArticleElement.description}}
+              <div layout="row" layout-align="end">
+                <div class="created-at">{{wintersArticleElement.createdAt | date:'MMM d, yyyy'}}</div>
+              </div>
             </div>
           </div>
           <img class="article-icon" ng-src="{{wintersArticleElement.image}}">
@@ -35,14 +38,17 @@ angular.module 'arashike-blog'
         ]
 
         image = "#{prefix}#{objects[Math.floor(Math.random() * objects.length)]}"
-        description = attrs.description
-        if description.length > 30
-          description = "#{description[0..24]}..."
 
-        else if !description.length
+        gist = JSON.parse attrs.gist
+        description = gist.description
+
+        if !description
           description = "No title..."
+        else if description.length > 30
+          description = "#{description[0..24]}..."
 
         scope.wintersArticleElement =
           image: image
           description: description
+          createdAt: gist.created_at
   ]
