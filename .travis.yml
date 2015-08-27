@@ -16,3 +16,4 @@ before_install:
   - 'bower install'
 script:
   - 'grunt test'
+  - 'grunt build'
