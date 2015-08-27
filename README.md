@@ -1,6 +1,8 @@
 blog.arashike.com
 =================
 
+[![Build Status](https://travis-ci.org/JumpeiArashi/blog.arashike.com.svg)](https://travis-ci.org/JumpeiArashi/blog.arashike.com)
+
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular) version 0.12.1.
 
 
