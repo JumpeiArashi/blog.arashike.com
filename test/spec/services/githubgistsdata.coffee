@@ -6,11 +6,16 @@ describe 'Service: githubGistsData', ->
   beforeEach module 'arashike-blog'
 
   # instantiate service
-  githubGistsData = {}
-  beforeEach inject (_githubGistsData_) ->
-    githubGistsData = _githubGistsData_
+  githubGistsDataService = {}
+  beforeEach inject (_githubGistsDataService_) ->
+    githubGistsDataService = _githubGistsDataService_
 
-  it 'should do something', ->
-    expect !!githubGistsData
+  it 'should be exists', ->
+    expect !!githubGistsDataService
       .to
       .equal true
+
+  it 'should have gists property', ->
+    expect githubGistsDataService
+      .to.has.property 'gists'
+      .a 'array'
