@@ -11,12 +11,14 @@ angular.module 'arashike-blog'
   .service 'GithubGistsApiService', [
     '$http'
     'apiEndpoint'
+    'gistUsername'
     (
       $http
       apiEndpoint
+      gistUsername
     ) ->
-      return (username) ->
-        return $http.get("#{apiEndpoint}/users/#{username}/gists")
+      return ->
+        return $http.get("#{apiEndpoint}/users/#{gistUsername}/gists")
           .then (res) ->
             return res
           .then (res) ->
