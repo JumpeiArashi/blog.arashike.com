@@ -9,8 +9,10 @@
 ###
 angular.module 'arashike-blog'
   .service 'sharedDataService', ->
+    author = {}
     gists = []
 
     return {
+      author: author
       gists: gists
     }
