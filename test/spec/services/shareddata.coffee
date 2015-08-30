@@ -19,3 +19,8 @@ describe 'Service: sharedData', ->
     expect sharedData
       .to.has.property 'gists'
       .a 'array'
+
+  it 'should have author property', ->
+    expect sharedData
+      .to.has.property 'author'
+      .a 'object'
