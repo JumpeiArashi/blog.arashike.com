@@ -12,22 +12,22 @@ angular.module 'arashike-blog'
     '$scope'
     'GithubUserApiService'
     'GithubGistsApiService'
+    'githubGistsDataService'
     'authorName'
-    'gistUsername'
     (
       $scope
       GithubUserApiService
       GithubGistsApiService
+      githubGistsDataService
       authorName
-      gistUsername
     ) ->
-      $scope.data = []
+      $scope.data = githubGistsDataService.gists
 
       GithubUserApiService(authorName)
         .then (res) ->
           $scope.data.push res.data
 
-      GithubGistsApiService(gistUsername)
+      GithubGistsApiService()
         .then (res) ->
           $scope.data = $scope.data.concat res.data
   ]
