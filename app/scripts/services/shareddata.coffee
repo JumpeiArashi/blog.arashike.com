@@ -8,9 +8,11 @@
  # Service in the arashike-blog.
 ###
 angular.module 'arashike-blog'
-  .service 'githubGistsDataService', ->
+  .service 'sharedDataService', ->
+    author = {}
     gists = []
 
     return {
+      author: author
       gists: gists
     }

@@ -12,22 +12,36 @@ angular.module 'arashike-blog'
     '$scope'
     'GithubUserApiService'
     'GithubGistsApiService'
-    'githubGistsDataService'
+    'sharedDataService'
     'authorName'
     (
       $scope
       GithubUserApiService
       GithubGistsApiService
-      githubGistsDataService
+      sharedDataService
       authorName
     ) ->
-      $scope.data = githubGistsDataService.gists
+      $scope.articles = []
+
+      $scope.$watch(
+        () ->
+          return sharedDataService.author
+        (newVal, oldVal, scope) ->
+          scope.articles[0] = newVal
+      )
+
+      $scope.$watchCollection(
+        () ->
+          return sharedDataService.gists
+        (newCollection, oldCollection, scope) ->
+          scope.articles = scope.articles.concat newCollection
+      )
 
       GithubUserApiService(authorName)
         .then (res) ->
-          $scope.data.push res.data
+          sharedDataService.author = res.data
 
       GithubGistsApiService()
         .then (res) ->
-          $scope.data = $scope.data.concat res.data
+          sharedDataService.gists = sharedDataService.gists.concat res.data
   ]
