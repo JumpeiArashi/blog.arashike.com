@@ -1,6 +1,6 @@
 'use strict'
 
-describe 'Service: GithubUserApi', ->
+describe 'Service: GithubUserApiService', ->
 
   # load the service's module
   beforeEach module 'arashike-blog'
@@ -10,7 +10,6 @@ describe 'Service: GithubUserApi', ->
   beforeEach inject (_GithubUserApiService_) ->
     GithubUserApiService = _GithubUserApiService_
 
-  it 'should do something', ->
-    expect !!GithubUserApiService
-      .to
-      .equal true
+  it 'should exist', ->
+    expect GithubUserApiService
+      .to.be.a 'function'
