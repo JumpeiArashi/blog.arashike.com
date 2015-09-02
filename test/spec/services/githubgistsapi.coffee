@@ -7,10 +7,23 @@ describe 'Service: GithubGistsApi', ->
 
   # instantiate service
   GithubGistsApiService = {}
-  beforeEach inject (_GithubGistsApiService_) ->
+  $httpBackend = {}
+  beforeEach inject (_GithubGistsApiService_, _$httpBackend_) ->
     GithubGistsApiService = _GithubGistsApiService_
+    $httpBackend = _$httpBackend_
 
-  it 'should do something', ->
-    expect !!GithubGistsApiService
-      .to
-      .equal true
+  afterEach () ->
+    $httpBackend.verifyNoOutstandingExpectation()
+    $httpBackend.verifyNoOutstandingRequest()
+
+  it 'should be function', ->
+    expect GithubGistsApiService
+      .to.be.a 'function'
+
+  it 'should has description, created_at, updated_at and comments keys as result of http request', ->
+    $httpBackend.expectGET("https://api.github.com/users/JumpeiArashi/gists")
+    GithubGistsApiService()
+      .then (res) ->
+        expect res.data[0]
+          .to.has.any.keys ['description', 'created_at', 'updated_at', 'comments']
+    $httpBackend.flush()
