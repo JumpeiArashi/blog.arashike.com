@@ -1,22 +1,22 @@
 'use strict'
 
-describe 'Controller: MainCtrl', ->
+describe 'Controller: TopCtrl', ->
 
   # load the controller's module
   beforeEach module 'arashike-blog'
 
-  MainCtrl = {}
+  TopCtrl = {}
 
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    MainCtrl = $controller 'MainCtrl', {
+    TopCtrl = $controller 'TopCtrl', {
       $scope: scope
     }
 
   it 'should not be undefined', ->
-    expect !!MainCtrl
+    expect !!TopCtrl
       .to
       .equal true

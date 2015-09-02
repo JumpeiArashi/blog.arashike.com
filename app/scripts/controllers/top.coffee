@@ -2,13 +2,13 @@
 
 ###*
  # @ngdoc function
- # @name blogarashikecomApp.controller:MainCtrl
+ # @name blogarashikecomApp.controller:TopCtrl
  # @description
- # # MainCtrl
+ # # TopCtrl
  # Controller of the blogarashikecomApp
 ###
 angular.module 'arashike-blog'
-  .controller 'MainCtrl', [
+  .controller 'TopCtrl', [
     '$scope'
     'GithubUserApiService'
     'GithubGistsApiService'
