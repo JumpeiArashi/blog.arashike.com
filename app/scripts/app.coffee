@@ -26,9 +26,8 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+        templateUrl: 'views/top.html'
+        controller: 'TopCtrl'
+        controllerAs: 'top'
       .otherwise
         redirectTo: '/'
-
