@@ -10,7 +10,8 @@ describe 'Directive: loading', ->
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
 
-  it 'should make hidden element visible', inject ($compile) ->
+  it 'should not be undefined', inject ($compile) ->
     element = angular.element '<loading></loading>'
     element = $compile(element) scope
-    expect(element.text()).toBe 'this is the loading directive'
+    expect !!element
+      .to.be.equal true
