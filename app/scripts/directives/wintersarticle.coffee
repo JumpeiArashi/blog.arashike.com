@@ -12,7 +12,7 @@ angular.module 'arashike-blog'
       restrict: 'E'
       template: """
         <article layout="column" layout-align="center center">
-          <a ng-href="/articles/{{wintersArticleElement.id}}">
+          <a ng-href="#/articles/{{wintersArticleElement.id}}">
             <div class="frame-mint">
               <div class="frame-inner">
               {{wintersArticleElement.description}}
@@ -22,7 +22,7 @@ angular.module 'arashike-blog'
               </div>
             </div>
           </a>
-          <a ng-href="/articles/{{wintersArticleElement.id}}">
+          <a ng-href="#/articles/{{wintersArticleElement.id}}">
             <img class="article-icon" ng-src="{{wintersArticleElement.image}}">
           </a>
         </article>
