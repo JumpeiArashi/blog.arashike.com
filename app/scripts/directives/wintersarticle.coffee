@@ -12,15 +12,19 @@ angular.module 'arashike-blog'
       restrict: 'E'
       template: """
         <article layout="column" layout-align="center center">
-          <div class="frame-mint">
-            <div class="frame-inner">
-            {{wintersArticleElement.description}}
-              <div layout="row" layout-align="end">
-                <div class="created-at">{{wintersArticleElement.createdAt | date:'MMM d, yyyy'}}</div>
+          <a ng-href="/articles/{{wintersArticleElement.id}}">
+            <div class="frame-mint">
+              <div class="frame-inner">
+              {{wintersArticleElement.description}}
+                <div layout="row" layout-align="end">
+                  <div class="created-at">{{wintersArticleElement.createdAt | date:'MMM d, yyyy'}}</div>
+                </div>
               </div>
             </div>
-          </div>
-          <img class="article-icon" ng-src="{{wintersArticleElement.image}}">
+          </a>
+          <a ng-href="/articles/{{wintersArticleElement.id}}">
+            <img class="article-icon" ng-src="{{wintersArticleElement.image}}">
+          </a>
         </article>
       """
       link: (scope, element, attrs) ->
@@ -48,6 +52,7 @@ angular.module 'arashike-blog'
           description = "#{description[0..24]}..."
 
         scope.wintersArticleElement =
+          id: gist.id
           image: image
           description: description
           createdAt: gist.created_at
