@@ -10,18 +10,21 @@
 angular.module 'arashike-blog'
   .controller 'TopCtrl', [
     '$scope'
+    '$q'
     'GithubUserApiService'
     'GithubGistsApiService'
     'sharedDataService'
     'authorName'
     (
       $scope
+      $q
       GithubUserApiService
       GithubGistsApiService
       sharedDataService
       authorName
     ) ->
       $scope.articles = []
+      $scope.isLoading = true
 
       $scope.$watch(
         () ->
@@ -37,11 +40,16 @@ angular.module 'arashike-blog'
           scope.articles = scope.articles.concat newCollection
       )
 
-      GithubUserApiService(authorName)
-        .then (res) ->
-          sharedDataService.author = res.data
+      githubPromises = $q.all [
+        GithubUserApiService(authorName)
+          .then (res) ->
+            sharedDataService.author = res.data
 
-      GithubGistsApiService()
-        .then (res) ->
-          sharedDataService.gists = sharedDataService.gists.concat res.data
+        GithubGistsApiService()
+          .then (res) ->
+            sharedDataService.gists = sharedDataService.gists.concat res.data
+      ]
+      githubPromises
+        .then () ->
+          $scope.isLoading = false
   ]
