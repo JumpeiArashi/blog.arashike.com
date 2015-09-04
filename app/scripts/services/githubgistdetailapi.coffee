@@ -8,5 +8,38 @@
  # Service in the arashike-blog.
 ###
 angular.module 'arashike-blog'
-  .service 'githubGistDetailApi', ->
-    # AngularJS will instantiate a singleton by calling "new" on this function
+  .service 'githubGistDetailApi', [
+    '$http'
+    'apiEndpoint'
+    (
+      $http
+      apiEndpoint
+    ) ->
+      result = {}
+      return (gistId) ->
+        $http.get "#{apiEndpoint}/gists/#{gistId}"
+          .then (res) ->
+            result = res.data
+            fileKeys = Object.keys result.files
+            fileContent = result.files[fileKeys[0]].content
+
+            req =
+              method: 'POST'
+              url: "#{apiEndpoint}/markdown/raw"
+              headers:
+                'Content-Type': 'text/x-markdown'
+              data:
+                text: fileContent
+
+            return $http req
+              .then (res) ->
+                result.htmlContent = res.data
+                res.data = result
+                return res
+
+              .then (res) ->
+                return res
+
+          .then (res) ->
+            return res
+  ]
