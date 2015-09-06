@@ -6,16 +6,31 @@ describe 'Controller: ArticleDetailCtrl', ->
   beforeEach module 'arashike-blog'
 
   ArticleDetailCtrl = {}
-
   scope = {}
+  $httpBackend = {}
 
-  # Initialize the controller and a mock scope
-  beforeEach inject ($controller, $rootScope) ->
+  beforeEach inject (
+    $controller
+    $rootScope
+    _$httpBackend_
+  ) ->
     scope = $rootScope.$new()
-    ArticleDetailCtrl = $controller 'ArticleDetailCtrl', {
-      # place here mocked dependencies
-    }
+    $httpBackend = _$httpBackend_
+    ArticleDetailCtrl = $controller(
+      'ArticleDetailCtrl'
+      {
+        $scope: scope
+        $routeParams:
+          gistId: 12345
+      }
+    )
 
   it 'should exist', ->
     expect !!ArticleDetailCtrl
       .to.be.equal true
+
+  it 'should have gist content as article detail', ->
+    $httpBackend.flush()
+
+    expect scope.gist
+      .to.has.any.keys ['created_at', 'updated_at', 'htmlContent']
