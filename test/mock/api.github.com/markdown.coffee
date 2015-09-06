@@ -9,7 +9,7 @@ angular.module 'arashike-blog'
       apiEndpoint
     ) ->
       $httpBackend.whenPOST(
-        "#{apiEndpoint}/markdown/raw"
+        "#{apiEndpoint}/markdown"
         {text: "# Test Content"}
       )
         .respond(

@@ -23,7 +23,7 @@ describe 'Service: githubGistDetailApi', ->
   it 'should has file content in result of http request', ->
     $httpBackend.expectGET 'https://api.github.com/gists/12345'
     $httpBackend.expectPOST(
-      'https://api.github.com/markdown/raw'
+      'https://api.github.com/markdown'
       text: "# Test Content"
     )
     githubGistDetailApi(12345)

@@ -25,9 +25,7 @@ angular.module 'arashike-blog'
 
             req =
               method: 'POST'
-              url: "#{apiEndpoint}/markdown/raw"
-              headers:
-                'Content-Type': 'text/x-markdown'
+              url: "#{apiEndpoint}/markdown"
               data:
                 text: fileContent
 
