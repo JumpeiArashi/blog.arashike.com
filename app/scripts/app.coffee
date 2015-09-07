@@ -29,5 +29,9 @@ angular
         templateUrl: 'views/top.html'
         controller: 'TopCtrl'
         controllerAs: 'top'
+      .when '/articles/:gistId',
+        templateUrl: 'views/articledetail.html'
+        controller: 'ArticleDetailCtrl'
+        controllerAs: 'articleDetail'
       .otherwise
         redirectTo: '/'
