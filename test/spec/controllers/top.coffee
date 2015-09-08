@@ -8,20 +8,12 @@ describe 'Controller: TopCtrl', ->
   TopCtrl = {}
   scope = {}
   $httpBackend = {}
-  GitHubUserApiService = {}
-  GithubGistsApiService = {}
-  sharedDataService = {}
-  authorName = ''
 
   # Initialize the controller and a mock scope
   beforeEach inject (
     $controller
     $rootScope
     _$httpBackend_
-    _GithubUserApiService_
-    _GithubGistsApiService_
-    _sharedDataService_
-    _authorName_
   ) ->
     scope = $rootScope.$new()
     $httpBackend = _$httpBackend_
@@ -29,10 +21,6 @@ describe 'Controller: TopCtrl', ->
       'TopCtrl'
       {
         $scope: scope
-        GithubUserApiService: _GithubUserApiService_
-        GithubGistsApiService: _GithubGistsApiService_
-        sharedDataService: _sharedDataService_
-        authorName: _authorName_
       }
     )
 
