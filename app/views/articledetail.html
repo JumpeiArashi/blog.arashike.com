@@ -1,4 +1,8 @@
-<md-content class="winters">
+<md-content layout-padding class="winters">
   <loading ng-if="isLoading"></loading>
-  <div ng-bind-html="gist.htmlContent"></div>
+  <div layout="row">
+    <div flex-lg="10" flex-gt-lg="20"></div>
+    <div flex-lg="80" flex-gt-lg="60" ng-bind-html="gist.htmlContent"></div>
+    <div flex-lg="10" flex-gt-lg="20"></div>
+  </div>
 </md-content>
