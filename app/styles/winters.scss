@@ -27,6 +27,16 @@ body {
       text-decoration: none;
     }
   }
+
+  .detail {
+    background: linear-gradient(
+      to bottom,
+      $winters_color 0%,
+      #E9FEF8 7%,
+      #E9FEF8 96%,
+      $winters_color 100%
+    );
+  }
   footer {
     min-height: 351px;
     background: url("../images/winters/footer.png") repeat-x;
