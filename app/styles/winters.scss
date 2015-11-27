@@ -12,6 +12,7 @@ body {
     background-size: 208px;
   }
   article {
+    color: #333333;
     .article-icon {
       margin-top: 16px;
     }
@@ -23,7 +24,30 @@ body {
         font-family: status;
       }
     }
+    a {
+      text-decoration: none;
+    }
   }
+
+  .detail {
+    h1 {
+      color: #22CDDC;
+    }
+    h2 {
+      color: #33DEED;
+    }
+    h3 {
+      color: #44EFFE;
+    }
+    background: linear-gradient(
+      to bottom,
+      $winters_color 0%,
+      #E9FEF8 7%,
+      #E9FEF8 96%,
+      $winters_color 100%
+    );
+  }
+
   footer {
     min-height: 351px;
     background: url("../images/winters/footer.png") repeat-x;

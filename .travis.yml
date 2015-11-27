@@ -11,7 +11,7 @@ addons:
 
 before_install:
   - 'gem install compass'
-  - 'npm install -g bower grunt-cli'
+  - 'npm install -g bower grunt-cli@0.1.13'
   - 'bower install'
 script:
   - 'grunt test'
