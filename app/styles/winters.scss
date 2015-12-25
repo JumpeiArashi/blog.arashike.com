@@ -1,4 +1,13 @@
 $winters_color: #D3FAF1;
+@font-face {
+  font-family: 'onett';
+  src: url('fonts/onett.woff');
+}
+
+@font-face {
+  font-family: 'twoson';
+  src: url('fonts/twoson.woff');
+}
 
 body {
   background-color: #00ABBA;
@@ -10,6 +19,42 @@ body {
     min-height: 182px;
     background: url("../images/winters/header.png") repeat-x;
     background-size: 208px;
+  }
+  .author-wrapper {
+    background: url('../images/winters/author-billboard-middle.png');
+    background-repeat: repeat-x;
+    background-size: 35px 86px;
+    a {
+      text-decoration: none;
+    }
+  }
+  .author {
+    color: antiquewhite;
+    height: 86px;
+    font-size: 13px;
+    font-family: 'onett';
+    background:
+      url('../images/winters/author-billboard-left.png'),
+      url('../images/winters/author-billboard-right.png');
+    background-position:
+      0 0,
+      right 0;
+    background-repeat:
+      no-repeat,
+      no-repeat;
+    background-size:
+      35px 86px,
+      35px 86px;
+    .author-prefix {
+      padding: 19px 0 0 20px;
+    }
+    .author-name {
+      padding: 10px 0px 0px 20px;
+    }
+    .author-image {
+      margin: 16px 8px 0 0;
+      height: 40px;
+    }
   }
   .articles {
     background: url("../images/winters/background-grass.png");
