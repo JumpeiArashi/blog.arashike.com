@@ -35,14 +35,18 @@ body {
     font-family: 'onett';
     background:
       url('../images/winters/author-billboard-left.png'),
+      url('../images/winters/author-billboard-middle-first.png'),
       url('../images/winters/author-billboard-right.png');
     background-position:
       0 0,
+      35px 0,
       right 0;
     background-repeat:
       no-repeat,
+      no-repeat,
       no-repeat;
     background-size:
+      35px 86px,
       35px 86px,
       35px 86px;
     .author-prefix {
