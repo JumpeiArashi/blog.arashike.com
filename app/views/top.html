@@ -2,12 +2,15 @@
   <div layout-padding class="articles">
     <md-grid-list ng-show="!isLoading" md-cols-sm="2" md-cols-gt-sm="4" md-cols-gt-md="8" md-cols-gt-lg="12" md-row-height-sm="6:7" md-row-height-gt-sm="7:8" md-row-height-gt-md="7:11" md-row-height-gt-lg="7:10">
       <md-grid-tile ng-repeat="article in articles">
-        <div ng-show="$first" class="frame-mint">
-          <div class="frame-inner">
-            <div class="author" layout="column" layout-align="center center">
-              <img class="author-image" ng-src="{{article.avatar_url}}}">
-              <div class="author-name">{{article.login}}</div>
-            </div>
+        <div ng-show="$first">
+          <div class="author-wrapper">
+            <a ng-href="{{article.html_url}}" class="author" layout="row" layout-align="center start">
+              <div layout="column">
+                <div class="author-prefix">I'm</div>
+                <div class="author-name">{{article.login}}</div>
+              </div>
+              <img lay class="author-image" ng-src="{{article.avatar_url}}}">
+            </a>
           </div>
         </div>
         <div ng-show="!$first">
