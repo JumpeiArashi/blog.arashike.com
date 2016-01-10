@@ -21,6 +21,7 @@ angular.module 'arashike-blog'
         return $http.get("#{apiEndpoint}/users/#{gistUsername}/gists")
           .then (res) ->
             return res
-          .then (res) ->
-            return res
+
+          .catch (err) ->
+            throw err
   ]

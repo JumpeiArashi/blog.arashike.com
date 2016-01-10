@@ -30,14 +30,12 @@ angular.module 'arashike-blog'
                 text: fileContent
 
             return $http req
-              .then (res) ->
-                result.htmlContent = res.data
-                res.data = result
-                return res
-
-              .then (res) ->
-                return res
 
           .then (res) ->
+            result.htmlContent = res.data
+            res.data = result
             return res
+
+          .catch (err) ->
+            throw err
   ]
