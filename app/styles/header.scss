@@ -7,22 +7,24 @@
   padding: 20px 20px 20px 10px;
 }
 
-.title {
-  color: chocolate;
-  font-family: 'fourside';
-  font-size: 17px;
-  padding: 6px 0 0 23px;
-  min-height: 32px;
-  background-image:
-    url('../images/header/balloon-left.png'),
-    url('../images/header/balloon-middle.png'),
-    url('../images/header/balloon-right.png');
-  background-position:
-    16px 0,
-    40px 0,
-    263px 0;
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat;
+header {
+  .title {
+    color: chocolate;
+    font-family: 'fourside';
+    font-size: 17px;
+    padding: 6px 0 0 23px;
+    min-height: 32px;
+    background-image:
+      url('../images/header/balloon-left.png'),
+      url('../images/header/balloon-middle.png'),
+      url('../images/header/balloon-right.png');
+    background-position:
+      16px 0,
+      40px 0,
+      263px 0;
+    background-repeat:
+      no-repeat,
+      no-repeat,
+      no-repeat;
+  }
 }

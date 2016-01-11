@@ -25,6 +25,7 @@ angular.module 'arashike-blog'
     ) ->
       $scope.articles = []
       $scope.isLoading = true
+      $scope.error = undefined
 
       $scope.$watch(
         () ->
@@ -52,4 +53,8 @@ angular.module 'arashike-blog'
       githubPromises
         .then () ->
           $scope.isLoading = false
+
+        .catch (err) ->
+          $scope.isLoading = false
+          $scope.error = err
   ]
