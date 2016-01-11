@@ -20,9 +20,16 @@ angular.module 'arashike-blog'
       $scope.gistId = $routeParams.gistId
       $scope.gist = undefined
       $scope.isLoading = true
+      $scope.error = undefined
 
       githubGistDetailApi($scope.gistId)
         .then (res) ->
           $scope.gist = res.data
+
+        .catch (err) ->
+          $scope.error = err
+
+        .finally ->
           $scope.isLoading = false
+
   ]

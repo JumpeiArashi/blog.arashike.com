@@ -51,10 +51,9 @@ angular.module 'arashike-blog'
             sharedDataService.gists = sharedDataService.gists.concat res.data
       ]
       githubPromises
-        .then () ->
-          $scope.isLoading = false
-
         .catch (err) ->
-          $scope.isLoading = false
           $scope.error = err
+
+        .finally ->
+          $scope.isLoading = false
   ]

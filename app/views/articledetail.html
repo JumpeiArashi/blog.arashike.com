@@ -1,6 +1,7 @@
 <div class="winters">
-  <div layout-padding ng-class="{'detail': isLoading == false}">
+  <div layout-padding ng-class="{'detail': !isLoading && !error}">
   <loading ng-if="isLoading"></loading>
+  <error ng-if="error"></error>
     <div layout="row">
       <div flex-lg="10" flex-gt-lg="20"></div>
       <div flex-lg="80" flex-gt-lg="60" ng-bind-html="gist.htmlContent"></div>
