@@ -2,14 +2,12 @@
 
 describe 'Service: setGithubApiKeyToDefaultAuthorizationHeader', ->
 
-  # load the service's module
   beforeEach () ->
     module 'arashike-blog'
 
-  # instantiate service
-  service = {}
-  cookies = {}
-  http = {}
+  service = undefined
+  cookies = undefined
+  http = undefined
 
   beforeEach ->
     inject (_setGithubApiKeyToDefaultAuthorizationHeader_, _$cookies_, _$http_) ->
