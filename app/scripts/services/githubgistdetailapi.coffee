@@ -11,11 +11,14 @@ angular.module 'arashike-blog'
   .service 'githubGistDetailApi', [
     '$http'
     'apiEndpoint'
+    'setGithubApiKeyToDefaultAuthorizationHeader'
     (
       $http
       apiEndpoint
+      setGithubApiKeyToDefaultAuthorizationHeader
     ) ->
       result = {}
+      setGithubApiKeyToDefaultAuthorizationHeader()
       return (gistId) ->
         $http.get "#{apiEndpoint}/gists/#{gistId}"
           .then (res) ->
