@@ -12,15 +12,18 @@ angular.module 'arashike-blog'
     '$scope'
     '$routeParams'
     'githubGistDetailApi'
+    'injectGithubApiKey'
     (
       $scope
       $routeParams
       githubGistDetailApi
+      injectGithubApiKey
     ) ->
       $scope.gistId = $routeParams.gistId
       $scope.gist = undefined
       $scope.isLoading = true
       $scope.error = undefined
+      $scope.injectGithubApiKey = injectGithubApiKey
 
       githubGistDetailApi($scope.gistId)
         .then (res) ->

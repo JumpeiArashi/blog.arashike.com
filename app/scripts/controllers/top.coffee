@@ -15,6 +15,7 @@ angular.module 'arashike-blog'
     'GithubGistsApiService'
     'sharedDataService'
     'authorName'
+    'injectGithubApiKey'
     (
       $scope
       $q
@@ -22,10 +23,12 @@ angular.module 'arashike-blog'
       GithubGistsApiService
       sharedDataService
       authorName
+      injectGithubApiKey
     ) ->
       $scope.articles = []
       $scope.isLoading = true
       $scope.error = undefined
+      $scope.injectGithubApiKey = injectGithubApiKey
 
       $scope.$watch(
         () ->
