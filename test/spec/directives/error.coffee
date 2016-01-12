@@ -10,7 +10,8 @@ describe 'Directive: error', ->
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
 
-  it 'should make hidden element visible', inject ($compile) ->
+  it 'makes hidden element visible', inject ($compile) ->
     element = angular.element '<error></error>'
     element = $compile(element) scope
-    expect(element.text()).toBe 'this is the error directive'
+    expect !!element
+      .to.be.equal true
