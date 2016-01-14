@@ -15,6 +15,11 @@
   border-image: url('../images/frame-mint.png') 32 repeat;
 }
 
+.frame-strawberry {
+  @extend .frame;
+  border-image: url('../images/frame-strawberry.png') 32 repeat;
+}
+
 .frame-inner {
   height: 100%;
   padding: 8px;

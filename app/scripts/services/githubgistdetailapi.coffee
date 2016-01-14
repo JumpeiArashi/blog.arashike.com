@@ -11,11 +11,14 @@ angular.module 'arashike-blog'
   .service 'githubGistDetailApi', [
     '$http'
     'apiEndpoint'
+    'setGithubApiKeyToDefaultAuthorizationHeader'
     (
       $http
       apiEndpoint
+      setGithubApiKeyToDefaultAuthorizationHeader
     ) ->
       result = {}
+      setGithubApiKeyToDefaultAuthorizationHeader()
       return (gistId) ->
         $http.get "#{apiEndpoint}/gists/#{gistId}"
           .then (res) ->
@@ -30,14 +33,12 @@ angular.module 'arashike-blog'
                 text: fileContent
 
             return $http req
-              .then (res) ->
-                result.htmlContent = res.data
-                res.data = result
-                return res
-
-              .then (res) ->
-                return res
 
           .then (res) ->
+            result.htmlContent = res.data
+            res.data = result
             return res
+
+          .catch (err) ->
+            throw err
   ]

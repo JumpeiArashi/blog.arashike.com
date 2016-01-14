@@ -15,6 +15,7 @@ angular.module 'arashike-blog'
     'GithubGistsApiService'
     'sharedDataService'
     'authorName'
+    'injectGithubApiKey'
     (
       $scope
       $q
@@ -22,9 +23,12 @@ angular.module 'arashike-blog'
       GithubGistsApiService
       sharedDataService
       authorName
+      injectGithubApiKey
     ) ->
       $scope.articles = []
       $scope.isLoading = true
+      $scope.error = undefined
+      $scope.injectGithubApiKey = injectGithubApiKey
 
       $scope.$watch(
         () ->
@@ -50,6 +54,9 @@ angular.module 'arashike-blog'
             sharedDataService.gists = sharedDataService.gists.concat res.data
       ]
       githubPromises
-        .then () ->
+        .catch (err) ->
+          $scope.error = err
+
+        .finally ->
           $scope.isLoading = false
   ]

@@ -12,15 +12,19 @@ angular.module 'arashike-blog'
     '$http'
     'apiEndpoint'
     'gistUsername'
+    'setGithubApiKeyToDefaultAuthorizationHeader'
     (
       $http
       apiEndpoint
       gistUsername
+      setGithubApiKeyToDefaultAuthorizationHeader
     ) ->
+      setGithubApiKeyToDefaultAuthorizationHeader()
       return ->
         return $http.get("#{apiEndpoint}/users/#{gistUsername}/gists")
           .then (res) ->
             return res
-          .then (res) ->
-            return res
+
+          .catch (err) ->
+            throw err
   ]

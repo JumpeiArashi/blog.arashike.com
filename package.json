@@ -3,6 +3,8 @@
   "private": true,
   "devDependencies": {
     "coffee-script": "*",
+    "generator-angular": "^0.15.1",
+    "generator-karma": "^1.0.1",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^2.0.0",
@@ -31,7 +33,8 @@
     "jshint-stylish": "^1.0.0",
     "karma-coffee-preprocessor": "*",
     "karma-phantomjs-launcher": "*",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "yo": "^1.6.0"
   },
   "engines": {
     "node": ">=0.10.0"
