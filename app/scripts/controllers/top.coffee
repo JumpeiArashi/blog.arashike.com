@@ -13,7 +13,6 @@ angular.module 'arashike-blog'
     '$q'
     'GithubUserApiService'
     'GithubGistsApiService'
-    'sharedDataService'
     'authorName'
     'injectGithubApiKey'
     (
@@ -21,7 +20,6 @@ angular.module 'arashike-blog'
       $q
       GithubUserApiService
       GithubGistsApiService
-      sharedDataService
       authorName
       injectGithubApiKey
     ) ->
@@ -30,30 +28,15 @@ angular.module 'arashike-blog'
       $scope.error = undefined
       $scope.injectGithubApiKey = injectGithubApiKey
 
-      $scope.$watch(
-        () ->
-          return sharedDataService.author
-        (newVal, oldVal, scope) ->
-          scope.articles[0] = newVal
-      )
-
-      $scope.$watchCollection(
-        () ->
-          return sharedDataService.gists
-        (newCollection, oldCollection, scope) ->
-          scope.articles = scope.articles.concat newCollection
-      )
-
       githubPromises = $q.all [
         GithubUserApiService(authorName)
-          .then (res) ->
-            sharedDataService.author = res.data
-
         GithubGistsApiService()
-          .then (res) ->
-            sharedDataService.gists = sharedDataService.gists.concat res.data
       ]
       githubPromises
+        .then (results) ->
+          $scope.articles[0] = results[0].data
+          $scope.articles = $scope.articles.concat results[1].data
+
         .catch (err) ->
           $scope.error = err
 
