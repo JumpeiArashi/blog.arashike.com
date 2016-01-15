@@ -10,36 +10,29 @@
 angular.module 'arashike-blog'
   .controller 'TopCtrl', [
     '$scope'
-    '$q'
-    'GithubUserApiService'
-    'GithubGistsApiService'
-    'authorName'
+    'getArticles'
     'injectGithubApiKey'
+    'githubOauthRedirect'
     (
       $scope
-      $q
-      GithubUserApiService
-      GithubGistsApiService
-      authorName
+      getArticles
       injectGithubApiKey
+      githubOauthRedirect
     ) ->
       $scope.articles = []
       $scope.isLoading = true
       $scope.error = undefined
       $scope.injectGithubApiKey = injectGithubApiKey
+      $scope.githubOauthRedirect = githubOauthRedirect
 
-      githubPromises = $q.all [
-        GithubUserApiService(authorName)
-        GithubGistsApiService()
-      ]
-      githubPromises
-        .then (results) ->
-          $scope.articles[0] = results[0].data
-          $scope.articles = $scope.articles.concat results[1].data
+      getArticles()
+        .then (articles) ->
+          $scope.articles = articles
 
         .catch (err) ->
           $scope.error = err
 
         .finally ->
           $scope.isLoading = false
+
   ]
