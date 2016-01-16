@@ -1,5 +1,6 @@
 'use strict'
 
+
 ###*
  # @ngdoc overview
  # @name blogarashikecomApp
@@ -8,6 +9,7 @@
  #
  # Main module of the application.
 ###
+
 angular
   .module 'arashike-blog', [
     'ngAnimate'
@@ -19,6 +21,7 @@ angular
     'ngSanitize'
     'ngTouch'
     'ngMaterial'
+    'oauthio'
   ]
   .value 'apiEndpoint', 'https://api.github.com'
   .value 'authorName', 'JumpeiArashi'
@@ -35,3 +38,12 @@ angular
         controllerAs: 'articleDetail'
       .otherwise
         redirectTo: '/'
+  .run [
+    '$cookies'
+    'OAuth'
+    (
+      $cookies
+      oauth
+    ) ->
+      oauth.initialize 'fpFCpXzXgs52MP1yTdKNvZZz99M'
+  ]

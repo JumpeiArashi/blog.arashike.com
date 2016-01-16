@@ -25,6 +25,7 @@ angular.module 'arashike-blog'
                     <form class='github-personal-token'>
                       <input ng-model='githubApiKey'>
                       <span class='submit' ng-click='injectGithubApiKey(githubApiKey)'>Submit!!</span>
+                      <div class='submit' ng-click='githubOauthRedirect()'>Github oauth login</div>
                     </form>
                   </div>
                 </div>

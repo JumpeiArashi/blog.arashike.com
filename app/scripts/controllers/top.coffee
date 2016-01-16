@@ -28,11 +28,11 @@ angular.module 'arashike-blog'
       getArticles()
         .then (articles) ->
           $scope.articles = articles
+          if articles
+            $scope.isLoading = false
 
         .catch (err) ->
           $scope.error = err
-
-        .finally ->
           $scope.isLoading = false
 
   ]

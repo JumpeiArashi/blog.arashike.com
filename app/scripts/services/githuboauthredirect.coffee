@@ -9,13 +9,21 @@
 ###
 angular.module 'arashike-blog'
   .service 'githubOauthRedirect', [
+    '$q'
     '$location'
-    'sharedDataService'
+    '$cookies'
+    'OAuth'
     (
+      $q
       $location
-      sharedData
+      $cookies
+      oauth
     ) ->
       return () ->
-        console.log 'fired'
-        OAuth.redirect 'github', {cache: true}, $location.absUrl()
+        $cookies.put 'is_github_oauth_logged', true
+        oauth.redirect 'github', $location.absUrl()
+
+        deferred = $q.defer()
+        deferred.resolve()
+        return deferred.promise
   ]

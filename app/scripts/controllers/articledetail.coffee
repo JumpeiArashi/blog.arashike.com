@@ -11,28 +11,31 @@ angular.module 'arashike-blog'
   .controller 'ArticleDetailCtrl', [
     '$scope'
     '$routeParams'
-    'githubGistDetailApi'
+    'getGistDetail'
     'injectGithubApiKey'
+    'githubOauthRedirect'
     (
       $scope
       $routeParams
-      githubGistDetailApi
+      getGistDetail
       injectGithubApiKey
+      githubOauthRedirect
     ) ->
       $scope.gistId = $routeParams.gistId
       $scope.gist = undefined
       $scope.isLoading = true
       $scope.error = undefined
       $scope.injectGithubApiKey = injectGithubApiKey
+      $scope.githubOauthRedirect = githubOauthRedirect
 
-      githubGistDetailApi($scope.gistId)
+      getGistDetail($scope.gistId)
         .then (res) ->
-          $scope.gist = res.data
+          $scope.gist = res
+          if res
+            $scope.isLoading = false
 
         .catch (err) ->
           $scope.error = err
-
-        .finally ->
           $scope.isLoading = false
 
   ]
