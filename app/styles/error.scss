@@ -17,7 +17,7 @@
     font-family: status;
   }
   .github-personal-token {
-    input {
+    .github-api-key {
       color: white;
       background-color: black;
       margin-left: 10px;
@@ -30,6 +30,9 @@
       font-family: twoson;
       font-size: 19px;
       cursor: pointer;
+      color: white;
+      background-color: black;
+      border: none;
     }
   }
 }
