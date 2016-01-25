@@ -470,7 +470,7 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'https://github.com/JumpeiArashi-weblog/blog.git',
+          remote: 'https://github.com/JumpeiArashi-blog/blog.git',
           branch: 'gh-pages'
         }
       }
