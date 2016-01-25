@@ -9,6 +9,9 @@
 
 module.exports = function (grunt) {
 
+  // Load grunt build-control
+  grunt.loadNpmTasks('grunt-build-control');
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -454,6 +457,22 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.coffee',
         singleRun: true
+      }
+    },
+
+    // Deployment settings
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'https://github.com/JumpeiArashi-blog/blog.git',
+          branch: 'gh-pages'
+        }
       }
     }
   });
