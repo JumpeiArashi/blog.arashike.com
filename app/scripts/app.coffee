@@ -21,6 +21,7 @@ angular
     'ngMaterial'
   ]
   .value 'apiEndpoint', 'https://api.github.com'
+  .value 'gistUrl', 'https://gist.github.com'
   .value 'authorName', 'JumpeiArashi'
   .value 'gistUsername', 'JumpeiArashi'
   .config ($routeProvider) ->

@@ -7,5 +7,13 @@
       <div flex-lg="80" flex-gt-lg="60" ng-bind-html="gist.htmlContent"></div>
       <div flex-lg="10" flex-gt-lg="20"></div>
     </div>
+    <div ng-if="!isLoading" class="comment" layout="row">
+      <div flex-lg="10" flex-gt-lg="20"></div>
+      <div flex-lg="80" flex-gt-lg="60">
+        <a class="direct-gist-link" ng-href="{{gistUrl}}/{{gistUsername}}/{{gistId}}">コメントする</a>
+        <span>(すいません、今のところ直接gistでのコメントです。)</span>
+      </div>
+      <div flex-lg="10" flex-gt-lg="20"></div>
+    </div>
   </div>
 </div>

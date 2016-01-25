@@ -98,6 +98,13 @@ body {
       #E9FEF8 96%,
       $winters_color 100%
     );
+    .comment {
+      margin-top: 20px;
+      .direct-gist-link {
+        text-decoration: none;
+        margin-right: 10px;
+      }
+    }
   }
 
   footer {
