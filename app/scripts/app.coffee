@@ -23,7 +23,7 @@ angular
   .value 'apiEndpoint', 'https://api.github.com'
   .value 'gistUrl', 'https://gist.github.com'
   .value 'authorName', 'JumpeiArashi'
-  .value 'gistUsername', 'JumpeiArashi'
+  .value 'gistUsername', 'JumpeiArashi-blog'
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
