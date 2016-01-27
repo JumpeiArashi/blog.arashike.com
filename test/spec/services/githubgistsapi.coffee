@@ -16,14 +16,13 @@ describe 'Service: GithubGistsApi', ->
     $httpBackend.verifyNoOutstandingExpectation()
     $httpBackend.verifyNoOutstandingRequest()
 
-  it 'should be function', ->
-    expect GithubGistsApiService
-      .to.be.a 'function'
+  context 'without arguments', ->
 
-  it 'should has description, created_at, updated_at and comments keys as result of http request', ->
-    $httpBackend.expectGET("https://api.github.com/users/JumpeiArashi/gists")
-    GithubGistsApiService()
-      .then (res) ->
-        expect res.data[0]
-          .to.has.any.keys ['description', 'created_at', 'updated_at', 'comments']
-    $httpBackend.flush()
+    it 'has description, created_at, updated_at and comments', ->
+      $httpBackend.expectGET("https://api.github.com/users/JumpeiArashi-blog/gists")
+      GithubGistsApiService()
+        .then (res) ->
+          expect res.data[0]
+            .to.has.any.keys ['description', 'created_at', 'updated_at', 'comments']
+
+      $httpBackend.flush()

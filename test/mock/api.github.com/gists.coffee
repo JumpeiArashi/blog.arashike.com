@@ -8,7 +8,7 @@ angular.module 'arashike-blog'
       $httpBackend
       apiEndpoint
     ) ->
-      $httpBackend.whenGET("#{apiEndpoint}/users/JumpeiArashi/gists")
+      $httpBackend.whenGET("#{apiEndpoint}/users/JumpeiArashi-blog/gists")
         .respond(
           200,
           [
@@ -25,14 +25,14 @@ angular.module 'arashike-blog'
                   "filename": "README.md",
                   "type": "text/plain",
                   "language": "Markdown",
-                  "raw_url": "https://gist.githubusercontent.com/JumpeiArashi/146669bf0e0c0145774f/raw/baf0dcc6a45de89d6b1304ed0e141e2f5ecd19e0/README.md",
+                  "raw_url": "https://gist.githubusercontent.com/JumpeiArashi-blog/146669bf0e0c0145774f/raw/baf0dcc6a45de89d6b1304ed0e141e2f5ecd19e0/README.md",
                   "size": 281
                 },
                 "slack.py": {
                   "filename": "slack.py",
                   "type": "application/x-python",
                   "language": "Python",
-                  "raw_url": "https://gist.githubusercontent.com/JumpeiArashi/146669bf0e0c0145774f/raw/2257092f72a227fe50093eb96c023c5117909c99/slack.py",
+                  "raw_url": "https://gist.githubusercontent.com/JumpeiArashi-blog/146669bf0e0c0145774f/raw/2257092f72a227fe50093eb96c023c5117909c99/slack.py",
                   "size": 1683
                 }
               },
@@ -44,21 +44,21 @@ angular.module 'arashike-blog'
               "user": null,
               "comments_url": "https://api.github.com/gists/146669bf0e0c0145774f/comments",
               "owner": {
-                "login": "JumpeiArashi",
+                "login": "JumpeiArashi-blog",
                 "id": 1898689,
                 "avatar_url": "https://avatars.githubusercontent.com/u/1898689?v=3",
                 "gravatar_id": "",
-                "url": "https://api.github.com/users/JumpeiArashi",
-                "html_url": "https://github.com/JumpeiArashi",
-                "followers_url": "https://api.github.com/users/JumpeiArashi/followers",
-                "following_url": "https://api.github.com/users/JumpeiArashi/following{/other_user}",
-                "gists_url": "https://api.github.com/users/JumpeiArashi/gists{/gist_id}",
-                "starred_url": "https://api.github.com/users/JumpeiArashi/starred{/owner}{/repo}",
-                "subscriptions_url": "https://api.github.com/users/JumpeiArashi/subscriptions",
-                "organizations_url": "https://api.github.com/users/JumpeiArashi/orgs",
-                "repos_url": "https://api.github.com/users/JumpeiArashi/repos",
-                "events_url": "https://api.github.com/users/JumpeiArashi/events{/privacy}",
-                "received_events_url": "https://api.github.com/users/JumpeiArashi/received_events",
+                "url": "https://api.github.com/users/JumpeiArashi-blog",
+                "html_url": "https://github.com/JumpeiArashi-blog",
+                "followers_url": "https://api.github.com/users/JumpeiArashi-blog/followers",
+                "following_url": "https://api.github.com/users/JumpeiArashi-blog/following{/other_user}",
+                "gists_url": "https://api.github.com/users/JumpeiArashi-blog/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/JumpeiArashi-blog/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/JumpeiArashi-blog/subscriptions",
+                "organizations_url": "https://api.github.com/users/JumpeiArashi-blog/orgs",
+                "repos_url": "https://api.github.com/users/JumpeiArashi-blog/repos",
+                "events_url": "https://api.github.com/users/JumpeiArashi-blog/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/JumpeiArashi-blog/received_events",
                 "type": "User",
                 "site_admin": false
               }
