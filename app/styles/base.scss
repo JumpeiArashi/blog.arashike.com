@@ -4,10 +4,8 @@
 }
 
 .frame {
-  border-width: 13px;
-  border-image: url('../images/frame-plane.png');
-  border-image-slice: 32;
-  border-image-repeat: repeat;
+  border: 13px solid transparent;
+  border-image: url('../images/frame-plane.png') 32 repeat;
 }
 
 .frame-mint {
