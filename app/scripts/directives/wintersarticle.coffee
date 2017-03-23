@@ -22,7 +22,7 @@ angular.module 'arashike-blog'
               </div>
             </div>
           </a>
-          <a ng-href="#/articles/{{wintersArticleElement.id}}">
+          <a ng-href="articles/{{wintersArticleElement.id}}">
             <img class="article-icon" ng-src="{{wintersArticleElement.image}}">
           </a>
         </article>
