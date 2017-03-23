@@ -6,16 +6,19 @@
 .frame {
   border: 13px solid transparent;
   border-image: url('../images/frame-plane.png') 32 repeat;
+  -webkit-border-image: url('../images/frame-plane.png') 32 repeat;
 }
 
 .frame-mint {
   @extend .frame;
   border-image: url('../images/frame-mint.png') 32 repeat;
+  -webkit-border-image: url('../images/frame-mint.png') 32 repeat;
 }
 
 .frame-strawberry {
   @extend .frame;
   border-image: url('../images/frame-strawberry.png') 32 repeat;
+  -webkit-border-image: url('../images/frame-strawberry.png') 32 repeat;
 }
 
 .frame-inner {

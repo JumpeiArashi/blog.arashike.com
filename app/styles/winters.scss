@@ -16,7 +16,7 @@ body {
 .winters  {
   background-color: $winters_color;
   header {
-    min-height: 182px;
+    min-height: 185px;
     background: url("../images/winters/header.png") repeat-x;
     background-size: 208px;
   }
@@ -30,9 +30,9 @@ body {
   }
   .author {
     color: antiquewhite;
-    height: 86px;
+    min-height: 85px;
+    font-family: onett;
     font-size: 13px;
-    font-family: 'onett';
     background:
       url('../images/winters/author-billboard-left.png'),
       url('../images/winters/author-billboard-middle-first.png'),
@@ -53,7 +53,9 @@ body {
       padding: 19px 0 0 20px;
     }
     .author-name {
-      padding: 10px 0px 0px 20px;
+      padding: 10px 0 0 20px;
+      // TODO: fix font size at safari
+      min-width: 140px;
     }
     .author-image {
       margin: 16px 8px 0 0;
@@ -108,7 +110,7 @@ body {
   }
 
   footer {
-    min-height: 351px;
+    min-height: 348px;
     background: url("../images/winters/footer.png") repeat-x;
     background-size: 380px;
   }
@@ -117,7 +119,7 @@ body {
     }
     .credit-text {
       margin-right: -10px;
-      font-family: 'status';
+      font-family: status;
       font-size: 85%;
       color: $winters_color;
     }
